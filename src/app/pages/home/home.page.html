@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agenda Contábil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="!orcamentos.length">
+    <ion-item *ngFor="let item of [0, 1, 2]">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let orcamento of ormanentos">
+      <ion-item button [routerLink]="['/orcamento', orcamento.id]">
+        <ion-avatar slot="start">
+          <img [src]="orcamento.picture">
+        </ion-avatar>
+
+        <ion-label>
+          {{ orcamento.name }}
+          <p>{{ orcamento.description }}</p>
+          <p>{{ orcamento.createdDt | date: 'short' }}</p>
+        </ion-label>
+
+        <!--<ion-note color="primary" slot="end" *ngIf="orcamento.price">{{ orcamento.price | currency: 'BRL' }}</ion-note> -->
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deleteOramento(orcamento.id)">
+          <ion-icon slot="top" name="trash"></ion-icon>
+          Excluir
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button size="normal" name="contato" color="success" (click)="contato()">
+      <ion-icon name="logo-whatsapp" placeholder="Contato"></ion-icon>
+    </ion-button>
+
+    <ion-button size="normal" name="agenda" color="success" (click)="agenda()">
+      <ion-icon name="paper"></ion-icon>
+    </ion-button>
+
+    <ion-button size="normal" name="ormanentos" color="success" [routerLink]="['/orcamento', orcamento.id]">
+      <ion-icon name="basket"></ion-icon>
+    </ion-button>
+
+    <ion-button size="normal" name="setting" color="success" (click)="setting()" slot="primary">
+      <ion-icon name="settings"></ion-icon>
+    </ion-button>
+
+    <ion-button size="normal" slot="primary" color="danger" (click)="logout()">
+      <ion-icon slot="icon-only" name="log-out"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

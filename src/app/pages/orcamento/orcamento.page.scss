@@ -1,0 +1,40 @@
+ion-header {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25em;
+    text-transform: uppercase;
+
+    ion-toolbar {
+        background-color: #ec1c24;
+    }
+
+    ion-title {
+        text-decoration-color: #ec1c24;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.slide-inner {
+    width: 95%;
+    color: #fff;
+
+    ion-item {
+        --backgrround: rgba(255,255,255, 0,2);
+        --border-radius: 10px;
+
+        ion-input {
+            color: silver;
+            text-emphasis-color: black;
+        }
+    }
+}
+
+ion-footer {
+    .button {
+        text-align: center;
+        --border-radius: 10px;
+    }
+}

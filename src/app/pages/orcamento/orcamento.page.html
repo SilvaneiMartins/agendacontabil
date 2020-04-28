@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Solicitar Orçamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="Orcamento.name" placeholder="Digite um nome..."></ion-input>
+    </ion-item>   
+    <ion-item>
+      <ion-input type="tel" [(ngModel)]="Ocamento.phone" placeholder="Digite um telefone..."></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-input type="email" [(ngModel)]="Orcamento.email" placeholder="Digite uma e-mail..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="Orcamento.description" placeholder="Digite uma descrição..."></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="button">
+    <ion-button fill="outline" size="default" color="danger" (click)="cancelarOrcamento()"
+      placeholder="Cancelar Orçamento">
+      <ion-icon name="arrow-round-back"></ion-icon>
+      Cancelar
+    </ion-button>
+
+    <ion-button fill="outline" size="default" color="success" (click)="cadastarOrcamento()"
+      placeholder=" Cadastrar Orçamento">
+      <ion-icon name="basket"></ion-icon>
+      Cadastrar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "agendaContabil",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
